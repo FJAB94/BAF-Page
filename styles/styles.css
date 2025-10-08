@@ -14,9 +14,9 @@
 	--gray-color: #ccc;
 	--gray-dark-color: #666;
 	--black-color: #000;
-	--link-color: #183a37;
+	--link-color: #c4a000;
 	--title-color: #333;
-	--text-color: #04151f;
+	--text-color: #04101f;
 	--white-alpha-color: rgb(255, 255, 255, 0.75);
 	--black-alpha-color: rgb(0, 0, 0, 0.75);
 	--font: "Raleway", sans-serif;
@@ -134,7 +134,7 @@ p {
 
 /* ----- Menu -----*/
 .menu-btn {
-	outline: thin solid var(--primary-color);
+	outline: thin solid var(--link-color);
 	border: 0;
 	cursor: pointer;
 	padding: 0.3rem;
@@ -166,12 +166,12 @@ p {
 	font-weight: bolder;
 	text-align: center;
 	text-decoration: none;
-	color: var(--primary-color);
+	color: var(--link-color);
 }
 
 .menu a:hover {
 	background-color: var(--primary-alpha-color);
-	color: var(--white-color);
+	color: var(--black-alpha-color);
 	transition: color 0.3s ease;
 }
 
@@ -188,6 +188,7 @@ p {
 	}
 	.menu a:hover {
 		background-color: transparent;
+		color: var(--primary-alpha-color);
 	}
 	.menu-btn {
 		display: none;
@@ -199,9 +200,11 @@ p {
 
 .box-shadow-1 {
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.25);
+	border-radius: 10%;
 }
 .box-shadow-2 {
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.35);
+	border-radius: 10%;
 }
 
 .container {
@@ -221,6 +224,28 @@ p {
 /* --------------------------------------------------------------------- */
 /* --------- Site Styles ---------- */
 
+.about {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+	text-align: left;
+}
+
+.about-text {
+	padding: 2rem;
+	color: var(--text-color);
+}
+
+.about-img {
+	width: 40vw;
+	height: auto;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 1rem;
+}
+
 .header {
 	position: fixed;
 	left: 0;
@@ -239,35 +264,19 @@ p {
 	align-items: center;
 }
 
+/* .home{
+	display: flex;
+} */
+
 .logo img {
 	max-width: 7rem;
 	height: auto;
 	cursor: pointer;
 }
 
-.about {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin: 2rem 1rem;
-	padding: 2rem;
-	text-align: left;
-}
-
-.about-text {
-	padding: 2rem;
-}
-
-.about-img {
-	width: 40vw;
-	height: auto;
-	border-radius: 50%;
-	object-fit: cover;
-	margin-bottom: 1rem;
-}
 
 .quote-title {
+	color: var(--title-color);
 	font-family: "DM Serif Display", serif;
 }
 
@@ -282,16 +291,18 @@ p {
 	.about {
 		display: grid;
 		grid-template-areas: "about-img about-text ";
-		grid-template-columns: 2fr 3fr;
+		grid-template-columns: 1fr 2fr;
 		grid-template-rows: auto auto;
 		padding: 2rem;
 		text-align: justify;
 	}
 	.about-img {
 		grid-area: about-img;
+		border-radius: 10%;
 	}
 	.about-text {
 		grid-area: about-text;
+		padding: 2rem 4rem;
 		font-size: 1.25rem;
 		margin: 2rem;
 	}
