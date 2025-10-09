@@ -386,8 +386,8 @@ p {
 .portfolio-modal img{
 	border-radius: 10%;
 	margin-bottom: 1rem;
-	width: 60vw;
-	height: auto;
+	height: 50vh;
+	width: auto;
 	object-fit: cover;
 }
 
@@ -402,6 +402,10 @@ p {
 	display:grid;
 	grid-template-columns: 60% 40%;
 	grid-auto-rows: 2rem;
+}
+
+.portfolio-details b{
+	color: var(--primary-color)
 }
 
 .quote-title {
@@ -444,6 +448,22 @@ p {
 	.portfolio .container > .section-title {
 		grid-column: span 3;
 	}
+
+	.portfolio-modal{
+		max-width: 800px;
+		flex-direction: row;
+	}
+
+	.portfolio-info{
+		margin-left: 1rem;
+	}
+
+	.portfolio-modal img{
+	border-radius: 10%;
+	width: 60%;
+	height: auto;
+	object-fit: cover;
+}
 
 	.section-title{
 		width: 400px;
