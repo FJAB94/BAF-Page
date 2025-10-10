@@ -21,12 +21,15 @@
 	const imagen = document.getElementById("logo_fab");
 
 	imagen.addEventListener("mouseover", () => {
+		imagen.classList.add("transition");
 		imagen.classList.add("opacity");
+		imagen.classList.add("scale");
 		imagen.src = "../assets/logo_baf_hover.png";
 	});
 
 	imagen.addEventListener("mouseout", () => {
 		imagen.classList.remove("opacity");
+		imagen.classList.remove("scale");
 		imagen.src = "../assets/logo_baf.png";
 	});
 })(document);

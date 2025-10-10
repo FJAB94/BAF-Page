@@ -93,6 +93,46 @@ p {
 /* --------------------------------------------------------------------- */
 /* --------- Components ---------- */
 
+/* ----- Footer ------ */
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--secondary-color);
+	color: var(--white-color);
+	text-align: center;
+	padding: 1rem;
+}
+footer a {
+	color: var(--link-color);
+	text-decoration: none;
+	font-weight: bolder;
+}
+footer a:hover {
+	color: var(--primary-color);
+	transition: color 0.3s ease;
+}
+
+footer .social-media {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+}
+
+footer .social-media img {
+	width: 3rem;
+	height: auto;
+	margin: 0 1rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+footer .social-media img:hover {
+	transform: scale(1.1);
+}
+
 /* ----- Modal ------ */
 
 .modal {
@@ -265,8 +305,11 @@ p {
 }
 
 .opacity {
-	opacity: 0.75;
-	transition: all 0.3s ease;
+	opacity: 0.6;
+}
+
+.scale{
+	transform: scale(1.15);
 }
 
 .section{
@@ -281,6 +324,10 @@ p {
 	width: 300px;
 	text-align: center;
 	color: var(--title-color);
+}
+
+.transition{
+	transition: all 0.3s ease;
 }
 /* --------------------------------------------------------------------- */
 /* --------- Site Styles ---------- */
