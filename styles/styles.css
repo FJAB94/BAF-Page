@@ -93,6 +93,76 @@ p {
 /* --------------------------------------------------------------------- */
 /* --------- Components ---------- */
 
+/* ----- Contact Form ----- */
+.contact-form {
+	margin: 2rem auto;
+	padding: 1rem;
+	max-width: 800px;
+}
+
+.contact-form > * {
+	padding: 0.5rem;
+	margin: 1rem auto;
+	display: block;
+	width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+	font-size: 0.85rem;
+	font: var(--font);
+}
+
+.contact-form input {
+	border: 0;
+	border-bottom: thin solid var(--black-alpha-color);
+	padding-left: 0;
+}
+
+.contact-form textarea {
+	border: thin solid var(--black-alpha-color);
+	resize: none;
+}
+
+.contact-form *::placeholder {
+	color: var(--gray-dark-color);
+}
+
+.contact-form-response {
+	padding: 1rem;
+	width: 400px;
+	text-align: center;
+	background-color: var(--white-color);
+}
+/* 
+.contact-form-response img{
+	width: 4rem;
+	height: 4rem;
+	margin-top: 2rem;
+} */
+
+.modal#gracias:target {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+@media screen and (min-width: 1024px) {
+	.contact-form {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 1rem;
+	}
+
+	.contact-form input,
+	.contact-form textarea {
+		font-size: 1rem;
+	}
+
+	.contact-form textarea {
+		grid-column: span 2;
+	}
+}
+
 /* ----- Footer ------ */
 
 footer {
@@ -102,7 +172,9 @@ footer {
 	background-color: var(--secondary-color);
 	color: var(--white-color);
 	text-align: center;
+	margin-top: 10rem;
 	padding: 1rem;
+	margin-bottom: var(--header-height);
 }
 footer a {
 	color: var(--link-color);
@@ -133,6 +205,24 @@ footer .social-media img:hover {
 	transform: scale(1.1);
 }
 
+/* ----- Loader ------ */
+
+.loader-mate {
+	width: 6rem;
+	height: 6rem;
+	animation: escalarMate 1.5s infinite ease-in-out;
+}
+
+@keyframes escalarMate {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+}
+
 /* ----- Modal ------ */
 
 .modal {
@@ -151,24 +241,24 @@ footer .social-media img:hover {
 	transition: all 1s ease;
 }
 
-.modal-content{
+.modal-content {
 	position: relative;
 }
 
-.modal-close{
+.modal-close {
 	position: absolute;
 	top: 1rem;
 	right: 1rem;
 }
 
-.modal-close img{
+.modal-close img {
 	width: 2.7rem;
 	height: auto;
 	cursor: pointer;
 	border-radius: 50%;
 	transition: all 0.2s ease-in-out;
 }
-.modal-close img:hover{
+.modal-close img:hover {
 	width: 2.8rem;
 	height: auto;
 	border-radius: 45%;
@@ -276,14 +366,41 @@ footer .social-media img:hover {
 	.menu a:hover {
 		background-color: transparent;
 		color: var(--primary-alpha-color);
+		border-bottom: var(--primary-alpha-color) medium solid;
+		transition: all 0.1s ease;
 	}
 	.menu-btn {
 		display: none;
+	}
+
+	.footer {
+		margin-bottom: 0;
 	}
 }
 
 /* --------------------------------------------------------------------- */
 /* --------- Utilities ---------- */
+
+.btn {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	background-color: var(--secondary-color);
+	color: var(--white-color);
+	border: thin solid var(--black-alpha-color);
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 0.3rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.btn:hover {
+	border: thin solid var(--primary-color);
+	background-color: var(--primary-color);
+	color: var(--white-color);
+	transform: scale(1.03);
+	transition: all 0.2s ease;
+}
 
 .box-shadow-1 {
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.25);
@@ -308,25 +425,25 @@ footer .social-media img:hover {
 	opacity: 0.6;
 }
 
-.scale{
+.scale {
 	transform: scale(1.15);
 }
 
-.section{
+.section {
 	padding: 4rem 2rem;
 }
 
-.section-title{
+.section-title {
 	border-top: thin solid var(--primary-color);
 	border-bottom: thin solid var(--primary-color);
 	margin: 2rem auto;
-	padding: .5rem 1rem;
+	padding: 0.5rem 1rem;
 	width: 300px;
 	text-align: center;
 	color: var(--title-color);
 }
 
-.transition{
+.transition {
 	transition: all 0.3s ease;
 }
 /* --------------------------------------------------------------------- */
@@ -421,7 +538,11 @@ footer .social-media img:hover {
 	height: 100%;
 }
 
-.portfolio-modal{
+.portfolio .container a {
+	margin-top: 1.5rem;
+}
+
+.portfolio-modal {
 	padding: 1rem;
 	max-width: 400px;
 	display: flex;
@@ -430,7 +551,7 @@ footer .social-media img:hover {
 	background-color: var(--white-color);
 }
 
-.portfolio-modal img{
+.portfolio-modal img {
 	border-radius: 10%;
 	margin-bottom: 1rem;
 	height: 50vh;
@@ -438,21 +559,21 @@ footer .social-media img:hover {
 	object-fit: cover;
 }
 
-.portfolio-modal h3{
+.portfolio-modal h3 {
 	margin: 1rem auto;
-	padding: .5rem 1rem;
+	padding: 0.5rem 1rem;
 	border-bottom: thin solid var(--primary-color);
 	color: var(--title-color);
 }
 
-.portfolio-details{
-	display:grid;
+.portfolio-details {
+	display: grid;
 	grid-template-columns: 60% 40%;
 	grid-auto-rows: 2rem;
 }
 
-.portfolio-details b{
-	color: var(--primary-color)
+.portfolio-details b {
+	color: var(--primary-color);
 }
 
 .quote-title {
@@ -496,25 +617,24 @@ footer .social-media img:hover {
 		grid-column: span 3;
 	}
 
-	.portfolio-modal{
+	.portfolio-modal {
 		max-width: 800px;
 		flex-direction: row;
 	}
 
-	.portfolio-info{
+	.portfolio-info {
 		margin-left: 1rem;
 	}
 
-	.portfolio-modal img{
-	border-radius: 10%;
-	width: 60%;
-	height: auto;
-	object-fit: cover;
-}
+	.portfolio-modal img {
+		border-radius: 10%;
+		width: 60%;
+		height: auto;
+		object-fit: cover;
+	}
 
-	.section-title{
+	.section-title {
 		width: 400px;
 		font-size: 2rem;
 	}
-
 }

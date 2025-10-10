@@ -275,14 +275,58 @@
 				</div>
 			</article>
 			<section id="contacto" class="contact">
-				<h3>Contactame!</h3>
-
-				<form action=""></form>
+				<div class="container">
+					<h2 class="section-title">Contacto</h2>
+					<form class="contact-form box-shadow-1">
+						<input
+							type="text"
+							name="name"
+							placeholder="Ingresa tu nombre *"
+							title="Nombre sólo acepta letras y espacios en blanco"
+							pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+							required
+						/>
+						<input
+							type="email"
+							name="email"
+							placeholder="Ingresa tu email *"
+							title="Email incorrecto"
+							pattern="[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+							required
+						/>
+						<textarea
+							name="comentarios"
+							cols="50"
+							rows="10"
+							placeholder="Dejame tus comentarios"
+							required
+						></textarea>
+						<div class="contact-form-loader">
+							<img src="../assets/loader_mate.png" class="loader-mate" alt="Cargando..." />
+						</div>
+						<input class="btn" type="submit" value="ENVIAR MENSAJE">
+					</form>
+					<article id="gracias" class="modal">
+						<div class="modal-content">
+							<article class="contact-form-response">
+								<h3>!Muchas Gracias!
+									<br>
+									por tus comentarios.
+								</h3>
+							</article>
+						</div>
+					</article>
+				</div>
 			</section>
 		</main>
 		<footer class="footer">
 			<div class="container">
-				<p><b>&copy; 2024 Franco Aguilar Beltramo. Todos los derechos reservados.</b></p>
+				<p>
+					<b
+						>&copy; 2024 Franco Aguilar Beltramo. Todos los derechos
+						reservados.</b
+					>
+				</p>
 				<p>
 					Diseñado y desarrollado por
 					<a href="https://www.francoaguilar.dev" target="_blank"
@@ -290,21 +334,16 @@
 					>
 				</p>
 				<div class="social-media">
-					<a
-						href="./index.html#home"
-						target="_blank" rel="noopener"
+					<a href="./index.html#home" target="_blank" rel="noopener"
 						><img src="../assets/linkedin_logo.png" alt="LinkedIn"
 					/></a>
-					<a
-						href="./index.html#home"
-						target="_blank" rel="noopener"
+					<a href="./index.html#home" target="_blank" rel="noopener"
 						><img src="../assets/instagram_logo.png" alt="Instagram"
 					/></a>
-					<a
-						href="./index.html#home"
-						target="_blank" rel="noopener"
+					<a href="./index.html#home" target="_blank" rel="noopener"
 						><img src="../assets/facebook_logo.png" alt="Facebook"
 					/></a>
+				</div>
 			</div>
 		</footer>
 		<script src="../js/index.js"></script>
