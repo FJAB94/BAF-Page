@@ -16,17 +16,51 @@
 			href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="icon" href="../assets/favicon_mate.png" type="image/x-icon" />
-		<title>FAB Studio</title>
+		<title>FAB Studio | Diseñador de experiencias digitales</title>
+		<!-- Meta etiquetas SEO -->
+		<meta ref="canonical" href="" />
+		<!-- Agrega la URL canónica de tu sitio -->
 		<meta
 			name="description"
-			content="Portfolio de Franco Aguilar Beltramo, desarrollador web con experiencia en HTML, CSS y JavaScript."
+			content="Bienvenido a FAB Studio: donde el arte del tango se fusiona con el código moderno."
 		/>
 		<meta
 			name="keywords"
-			content="portfolio, desarrollador web, HTML, CSS, JavaScript"
+			content="desarrollo web, creatividad, identidad, HTML, CSS, JavaScript"
 		/>
 		<meta name="author" content="Franco Aguilar Beltramo" />
+		<meta name="robots" content="index, follow" />
+		<link rel="icon" href="../assets/favicon_mate.png" type="image/x-icon" />
+		<!-- Agrega ruta absoluta a favicons -->
+		<link rel="apple-touch-icon" href="../assets/favicon_mate.png" />
+		<!-- Agrega ruta absoluta a favicons -->
+		<meta name="theme-color" content="#c44900" />
+		<!-- Meta etiquetas para redes sociales -->
+		<meta
+			property="og:title"
+			content="FAB Studio | Creatividad web desde Argentina"
+		/>
+		<meta
+			property="og:description"
+			content="Desde Buenos Aires al mundo: diseño web con pasión, precisión y un toque de tradición."
+		/>
+		<meta property="og:image" content="../assets/hero_image.png" />
+		<!-- Agrega ruta absoluta a imagen -->
+		<meta property="og:url" content="" />
+		<!-- Agrega la URL canónica de tu sitio -->
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="FAB Studio | Creatividad web desde Argentina"
+		/>
+		<meta
+			name="twitter:description"
+			content="Desde Buenos Aires al mundo: diseño web con pasión, precisión y un toque de tradición."
+		/>
+		<meta name="twitter:image" content="../assets/hero_image.png" />
+		<!-- Agrega ruta absoluta a imagen -->
+		<!-- Fin Meta etiquetas SEO -->
 	</head>
 	<body>
 		<header class="header">
@@ -282,35 +316,42 @@
 							type="text"
 							name="name"
 							placeholder="Ingresa tu nombre *"
-							title="Nombre sólo acepta letras y espacios en blanco"
+							title="Nombre sólo acepta letras y espacios en blanco."
 							pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
 							required
 						/>
 						<input
 							type="email"
+							pattern="^[a-zA-Z0-9._%+-\-]+@[a-zA-Z0-9.%+-\-]+\.[a-zA-Z]{2,}$"
 							name="email"
 							placeholder="Ingresa tu email *"
-							title="Email incorrecto"
-							pattern="[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+							title="Email incorrecto."
 							required
 						/>
 						<textarea
 							name="comentarios"
+							data-pattern="^.{1,255}$"
 							cols="50"
 							rows="10"
-							placeholder="Dejame tus comentarios"
+							placeholder="Dejame tu consulta *"
+							title="Tu consulta no debe exceder los 255 caracteres."
 							required
 						></textarea>
-						<div class="contact-form-loader">
-							<img src="../assets/loader_mate.png" class="loader-mate" alt="Cargando..." />
+						<div class="contact-form-loader none">
+							<img
+								src="../assets/loader_mate.png"
+								class="loader-mate"
+								alt="Cargando..."
+							/>
 						</div>
-						<input class="btn" type="submit" value="ENVIAR MENSAJE">
+						<input class="btn" type="submit" value="ENVIAR MENSAJE" />
 					</form>
 					<article id="gracias" class="modal">
 						<div class="modal-content">
 							<article class="contact-form-response">
-								<h3>!Muchas Gracias!
-									<br>
+								<h3>
+									!Muchas Gracias!
+									<br />
 									por tus comentarios.
 								</h3>
 							</article>
